@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddGoalView: View {
     @EnvironmentObject var goalData: GoalData
+    @Environment(\.dismiss) var dismiss
     @State private var goalTitle: String = ""
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Date()
@@ -36,6 +37,7 @@ struct AddGoalView: View {
                     endDate: endDate
                 )
                 goalData.activeGoals.append(newGoal)
+                dismiss()
             } label: {
                 goalAddButtonStyle
             }

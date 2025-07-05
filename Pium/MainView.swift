@@ -50,4 +50,5 @@ private var addGoalButton: some View {
 
 #Preview {
     MainView()
+        .environmentObject(GoalData())
 }
